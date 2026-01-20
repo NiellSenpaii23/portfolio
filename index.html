@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weather Dashboard</title>
+  <meta name="description" content="Simple weather dashboard using OpenWeatherMap API" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <h1 class="logo">Weather Dashboard</h1>
+      <div class="controls">
+        <form id="search-form" class="search-form" autocomplete="off">
+          <input id="city-input" name="city" placeholder="Search city (e.g., London)" />
+          <button type="submit" class="btn">Search</button>
+        </form>
+        <button id="loc-btn" class="btn">Use my location</button>
+        <div class="unit-toggle">
+          <label><input type="radio" name="unit" value="metric" checked> °C</label>
+          <label><input type="radio" name="unit" value="imperial"> °F</label>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main">
+    <section id="current" class="card current-card" aria-live="polite">
+      <!-- Current weather will be rendered here -->
+      <div class="loader" id="loader">Loading...</div>
+    </section>
+
+    <section id="forecast" class="forecast">
+      <!-- Forecast cards go here -->
+    </section>
+
+    <section id="details" class="details">
+      <!-- Extra details (humidity, wind, sunrise/sunset) -->
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <p>Data from <a href="https://openweathermap.org" target="_blank" rel="noopener">OpenWeatherMap</a>. If using the server proxy, set the OPENWEATHER_API_KEY in the server environment.</p>
+  </footer>
+
+  <script src="config.example.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
